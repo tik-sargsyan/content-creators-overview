@@ -8,222 +8,208 @@
  --flow:#d6006e; --flow-tint:#fdeff6; --flow-line:#f3c4dc;
  --preset:#0c8a7c; --preset-tint:#e7f6f3; --preset-line:#bfe6df;
  --shared:#5b4b8a; --shared-tint:#efecf8; --shared-line:#d6cdef;
- --ok:#12805c;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);
  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
- line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+ line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
 .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--flow)}
-h1{font-size:clamp(34px,6vw,60px);line-height:1.02;letter-spacing:-.028em;font-weight:850;margin:.28em 0 .24em}
-h2{font-size:clamp(22px,3.2vw,30px);letter-spacing:-.02em;font-weight:800;margin:0 0 6px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.02;letter-spacing:-.028em;font-weight:850;margin:.26em 0 .22em}
+h2{font-size:clamp(21px,3vw,28px);letter-spacing:-.02em;font-weight:800;margin:0}
 h3{margin:0}
 p{margin:0}
-section{padding:52px 0;border-top:1px solid var(--line)}
-.lead{font-size:clamp(16px,2.1vw,20px);color:var(--body);max-width:70ch}
-.sec-lead{color:var(--muted);max-width:70ch;margin:4px 0 26px;font-size:15.5px}
-.num{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+section{padding:46px 0;border-top:1px solid var(--line)}
+.lead{font-size:clamp(16px,2vw,19px);color:var(--body);max-width:64ch}
+.num{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px}
+.sub{color:var(--muted);max-width:62ch;margin:6px 0 22px;font-size:15px}
 /* header */
-header{padding:64px 0 46px;background:
- radial-gradient(1200px 340px at 88% -10%, var(--flow-tint), transparent 60%),
- radial-gradient(1000px 320px at 4% 0%, var(--preset-tint), transparent 55%);}
-.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.pill{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13.5px;font-weight:650;display:flex;align-items:center;gap:8px}
-.pill b{font-weight:800}
+header{padding:60px 0 42px;background:
+ radial-gradient(1100px 320px at 90% -10%, var(--flow-tint), transparent 60%),
+ radial-gradient(900px 300px at 2% 0%, var(--preset-tint), transparent 55%);}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.pill{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:650;display:flex;align-items:center;gap:7px}
 .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
 .dot.f{background:var(--flow)} .dot.p{background:var(--preset)} .dot.s{background:var(--shared)}
 /* cards */
-.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px;position:relative;overflow:hidden}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:18px 20px;position:relative;overflow:hidden}
 .card::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--shared)}
-.card.f::before{background:var(--flow)} .card.p::before{background:var(--preset)} .card.s::before{background:var(--shared)}
-.grid{display:grid;gap:16px}
-.g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:repeat(3,1fr)}
-@media(max-width:820px){.g2,.g3{grid-template-columns:1fr}}
-.card h3{font-size:17px;margin-bottom:6px}
-.card p{color:var(--body);font-size:14.5px}
-.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:7px;margin-bottom:12px}
+.card.f::before{background:var(--flow)} .card.p::before{background:var(--preset)}
+.grid{display:grid;gap:14px}
+.g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:1fr 1fr}
+@media(max-width:820px){.g3,.g2{grid-template-columns:1fr}}
+.card h3{font-size:16px;margin-bottom:5px}
+.card p{color:var(--body);font-size:14px}
+.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:6px;margin-bottom:10px}
 .tag.f{background:var(--flow-tint);color:var(--flow)} .tag.p{background:var(--preset-tint);color:var(--preset)} .tag.s{background:var(--shared-tint);color:var(--shared)}
-/* the one rule callout */
-.rule{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:stretch}
+/* one rule */
+.rule{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch;margin-top:20px}
 @media(max-width:820px){.rule{grid-template-columns:1fr}}
-.rulebox{background:var(--ink);color:#fff;border-radius:18px;padding:26px}
-.rulebox h3{color:#fff;font-size:18px;margin-bottom:10px}
-.rulebox ul{margin:0;padding-left:0;list-style:none}
-.rulebox li{padding:8px 0 8px 26px;position:relative;color:#e7e3ee;font-size:14.5px;border-top:1px solid #322c3b}
+.rulebox{background:var(--ink);color:#fff;border-radius:16px;padding:22px 24px}
+.rulebox h3{color:#fff;font-size:16px;margin-bottom:8px}
+.rulebox ul{margin:0;padding:0;list-style:none}
+.rulebox li{padding:8px 0 8px 24px;position:relative;color:#e7e3ee;font-size:14px;border-top:1px solid #322c3b}
 .rulebox li:first-child{border-top:none}
 .rulebox li::before{content:"\2713";position:absolute;left:0;color:#ff5fae;font-weight:800}
-/* two tracks */
-.tracks{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+/* tracks */
+.tracks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:820px){.tracks{grid-template-columns:1fr}}
-.lanes{list-style:none;margin:14px 0 0;padding:0}
-.lanes li{padding:11px 0;border-top:1px solid var(--line);font-size:14.5px}
+.lanes{list-style:none;margin:12px 0 0;padding:0}
+.lanes li{padding:8px 0;border-top:1px solid var(--line);font-size:14px}
 .lanes li:first-child{border-top:none}
-.lanes li b{display:block;font-size:14.5px}
-.lanes li span{color:var(--muted);font-size:13px}
-.choice{background:var(--paper);border:1px dashed var(--line);border-radius:14px;padding:16px 18px;margin-top:16px;font-size:14.5px;color:var(--body)}
-.choice b{color:var(--ink)}
-/* stack diagram */
-.stack{display:grid;gap:12px;margin-top:6px}
-.stack .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lanes li b{font-weight:750}
+.lanes li span{color:var(--muted)}
+.choice{background:var(--paper);border:1px dashed var(--line);border-radius:12px;padding:14px 16px;margin-top:14px;font-size:14px;color:var(--body)}
+/* stack */
+.stack{display:grid;gap:10px;margin-top:16px}
+.stack .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(max-width:820px){.stack .row{grid-template-columns:1fr}}
-.block{border-radius:14px;padding:16px 18px;border:1px solid var(--line);background:var(--paper)}
+.block{border-radius:12px;padding:14px 16px;border:1px solid var(--line);background:var(--paper)}
 .block .lab{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.block h4{margin:3px 0 4px;font-size:14.5px}
+.block p{font-size:13px;color:var(--body)}
 .block.base{background:var(--shared-tint);border-color:var(--shared-line)}
 .block.f{background:var(--flow-tint);border-color:var(--flow-line)}
 .block.p{background:var(--preset-tint);border-color:var(--preset-line)}
-.block h4{margin:4px 0 6px;font-size:15px}
-.block p{font-size:13.5px;color:var(--body)}
-/* repo tree */
-.tree{background:var(--ink);color:#eae6f0;border-radius:16px;padding:22px 24px;font:13.5px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-x:auto}
-.tree .c{color:#a99fc0} .tree .k{color:#ff7ac1} .tree .g{color:#57d9b4}
+/* inside list */
+.inside{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:820px){.inside{grid-template-columns:1fr}}
+.item{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.item b{font-size:14.5px} .item p{font-size:13px;color:var(--muted);margin-top:2px}
+.item code{font:12px ui-monospace,Menlo,Consolas,monospace;color:var(--shared);background:var(--shared-tint);padding:1px 6px;border-radius:5px}
 /* steps */
-.steps{counter-reset:s;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.steps{counter-reset:s;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 @media(max-width:820px){.steps{grid-template-columns:1fr}}
-.step{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px 16px 54px;position:relative}
-.step::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:26px;height:26px;border-radius:8px;background:var(--flow);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
-.step b{font-size:14.5px} .step p{font-size:13.5px;color:var(--body);margin-top:3px}
-.footnote{color:var(--muted);font-size:13px;margin-top:14px}
-footer{padding:34px 0 64px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-a{color:var(--flow);font-weight:650;text-decoration:none} a:hover{text-decoration:underline}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 15px 14px 48px;position:relative}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:14px;top:14px;width:24px;height:24px;border-radius:7px;background:var(--flow);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.step b{font-size:14px} .step p{font-size:12.5px;color:var(--muted);margin-top:2px}
+.foot{color:var(--muted);font-size:13px;margin-top:14px}
+footer{padding:30px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
 </style></head>
 <body>
 
 <header><div class="wrap">
 <div class="eyebrow">Internal enablement · Picsart</div>
 <h1>Picsart Content Creators</h1>
-<p class="lead">One shared, secret-free kit that lets artistic, non-technical creators make high-value AI content inside Claude, entirely on their own Picsart account and credits. Two ways to create, one common foundation, zero setup pain.</p>
+<p class="lead">A simple kit that lets creators make AI content by chatting with Claude, all on their own Picsart account. No code. No keys. No setup pain.</p>
 <div class="pills">
- <span class="pill"><span class="dot s"></span><b>1 repo</b>, shared read-only</span>
- <span class="pill"><span class="dot f"></span><b>0</b> API keys, ever</span>
- <span class="pill"><span class="dot p"></span><b>2 tracks:</b> Flow + Presets</span>
- <span class="pill">Your account, <b>your credits</b></span>
+ <span class="pill"><span class="dot s"></span>One shared kit</span>
+ <span class="pill"><span class="dot f"></span>No API keys, ever</span>
+ <span class="pill"><span class="dot p"></span>Two ways to create</span>
+ <span class="pill">Your account, your credits</span>
 </div>
 </div></header>
 
 <section><div class="wrap">
 <span class="num">01 · The goal</span>
-<h2 style="margin-top:10px">Give every creator a guided path from zero to finished AI content</h2>
-<p class="lead" style="margin-bottom:24px">Artistic creators shouldn't have to wrestle with tokens, keys, or infrastructure. This repo hands them a clear, guided kit: install once, sign in with Picsart, and start making films, ads, cartoons, product visuals, and avatars. Everyone clones the same repo read-only; only the owner changes the code, so the whole team stays in sync and safe.</p>
+<h2>Zero to finished content, guided all the way</h2>
+<p class="sub">Creators ask in plain words and get real results: films, ads, cartoons, product shots, avatars. The kit brings the recipes and the safety rails; the creator brings the idea.</p>
 <div class="rule">
- <div class="card s">
-  <span class="tag s">What it enables</span>
-  <h3>High-value output, no engineering</h3>
-  <p>Creators produce real deliverables (a scored short film, a launch ad, a cartoon short, a product catalog, a stylized avatar) by asking Claude in plain language. The repo supplies the strategy, the ready-made blueprints, and the guardrails; the creator supplies the idea and the taste.</p>
- </div>
- <div class="rulebox">
-  <h3>The one rule</h3>
-  <ul>
-   <li>Everything runs through <b>Picsart sign-in</b>, on the creator's own credits.</li>
-   <li>Every render shows an <b>approval first</b>; nothing spends without an OK.</li>
-   <li><b>No secrets in the repo.</b> If a step ever asks for an API key, something is wrong.</li>
-   <li>The private internal engine stays <b>completely separate</b> and unseen.</li>
-  </ul>
- </div>
+ <div class="card s"><span class="tag s">In one line</span>
+  <h3>Great output, no engineering</h3>
+  <p>Everyone clones the same kit and works on their own account. Only the owner edits it, so the whole team stays in sync.</p></div>
+ <div class="rulebox"><h3>The one rule</h3><ul>
+  <li>Runs on your Picsart sign-in and your credits.</li>
+  <li>Every render asks you first. Nothing spends without your OK.</li>
+  <li>No API keys, ever. If a step asks for one, something's wrong.</li>
+  <li>The private internal system stays separate and hidden.</li>
+ </ul></div>
 </div>
 </div></section>
 
 <section><div class="wrap">
 <span class="num">02 · The shared engine</span>
-<h2 style="margin-top:10px">What every creator gets, on both tracks</h2>
-<p class="sec-lead">A common foundation sits under both ways of creating. It handles onboarding, keeps spend and output visible, and enforces the safety model, so the creator only thinks about making things.</p>
+<h2>What everyone gets, on both tracks</h2>
+<p class="sub">One foundation sits under both ways of creating. It sets you up, keeps spend and output visible, and keeps things safe.</p>
 <div class="grid g3">
- <div class="card s"><span class="tag s">Onboarding</span><h3>creator-setup skill</h3><p>A guided, one-step-at-a-time setup that detects your OS, installs everything, signs you in, and runs a smoke test. Re-runnable any time as "verify my setup".</p></div>
- <div class="card s"><span class="tag s">Visibility</span><h3>Tracking &amp; budget</h3><p>Every create, render, and publish writes to a local ledger. A budget guard reads your live Picsart balance and warns before a big spend. Alert-only, it never blocks you.</p></div>
- <div class="card s"><span class="tag s">Safety</span><h3>Guardrails, not gates</h3><p>No API keys, approval on every render, a secret-scan on the repo, and optional quality checks. Local logs and caches keep everything auditable.</p></div>
+ <div class="card s"><span class="tag s">Setup</span><h3>Guided onboarding</h3><p>Walks you through setup one step at a time. Re-run anytime with "verify my setup".</p></div>
+ <div class="card s"><span class="tag s">Visibility</span><h3>Tracking &amp; budget</h3><p>Logs what you make and warns before a big spend. Alerts only, it never blocks you.</p></div>
+ <div class="card s"><span class="tag s">Safety</span><h3>Guardrails, not gates</h3><p>No keys, approval on every render, and a check that no secrets slip in.</p></div>
 </div>
-<div class="stack" style="margin-top:18px">
+<div class="stack">
  <div class="row">
-  <div class="block f"><span class="lab">Track A</span><h4>Flow creators</h4><p>Complex, multi-step pipelines.</p></div>
-  <div class="block p"><span class="lab">Track B</span><h4>GenAI Presets creators</h4><p>Simple, one-shot results.</p></div>
+  <div class="block f"><span class="lab">Track A</span><h4>Flow creators</h4><p>Bigger, multi-step projects.</p></div>
+  <div class="block p"><span class="lab">Track B</span><h4>Presets creators</h4><p>Quick, one-step results.</p></div>
  </div>
- <div class="block base"><span class="lab">Shared foundation</span><h4>creator-setup · tracking + budget alerts · safety model · ffmpeg helpers · the Flow plugin's own build skills</h4><p>Both tracks stand on the same base. Add a creator, change the setup once, and it applies everywhere.</p></div>
+ <div class="block base"><span class="lab">Shared foundation</span><h4>Setup · tracking + budget alerts · safety · the Flow plugin's own build skills</h4><p>Change it once, and it applies to everyone.</p></div>
 </div>
 </div></section>
 
 <section><div class="wrap">
 <span class="num">03 · The two tracks</span>
-<h2 style="margin-top:10px">Two ways to create, matched to the job</h2>
-<p class="sec-lead">Flow is for connected, multi-piece work with one clear outcome. Presets are for a single quick result. Same sign-in, same credits, same repo.</p>
+<h2>Two ways to create, matched to the job</h2>
+<p class="sub">Flow for bigger, multi-step projects. Presets for a quick one-step result. Same sign-in, same kit.</p>
 <div class="tracks">
- <div class="card f">
-  <span class="tag f">Track A · Flow</span>
-  <h3>Complex, multi-node workflows</h3>
-  <p>A pipeline of nodes that generate, refine, and assemble a finished piece. One clear outcome per workflow, built on the Picsart Flow canvas from ready-made blueprints.</p>
+ <div class="card f"><span class="tag f">Track A · Flow</span>
+  <h3>Bigger, multi-step projects</h3>
+  <p>Several steps combine into one finished piece, built from ready blueprints.</p>
   <ul class="lanes">
-   <li><b>Children's Content &amp; Cartoons</b><span>Photo-to-cartoon, characters, storylines, YouTube packaging</span></li>
-   <li><b>Filmmaking &amp; Storytelling</b><span>Story + scene builder, motion, titles, subtitles, shorts</span></li>
-   <li><b>Marketing &amp; Content Creation</b><span>AI video ads, UGC, product launches, repurposing</span></li>
-   <li><b>E-commerce &amp; Brand Growth</b><span>Product photography, try-on, videos, listings, catalogs</span></li>
-   <li><b>Design &amp; Creative Production</b><span>Editing, background removal, enhancement, brand identity</span></li>
+   <li><b>Children's Content &amp; Cartoons</b> <span>· kids cartoons to publish</span></li>
+   <li><b>Filmmaking &amp; Storytelling</b> <span>· short films and short-form</span></li>
+   <li><b>Marketing &amp; Content</b> <span>· ads, UGC, launches</span></li>
+   <li><b>E-commerce &amp; Brand Growth</b> <span>· product visuals and catalogs</span></li>
+   <li><b>Design &amp; Creative Production</b> <span>· editing and brand assets</span></li>
   </ul>
-  <p class="footnote">Ready blueprints: Short Film, Product Ad, Kids Cartoon, Brand-in-a-Box, Creator UGC Trend Kit, each a connected multi-input / multi-output design with a live prod example.</p>
+  <p class="foot">Ready blueprints: Short Film, Product Ad, Kids Cartoon, Brand-in-a-Box, Creator UGC Kit.</p>
  </div>
- <div class="card p">
-  <span class="tag p">Track B · GenAI Presets</span>
-  <h3>Simple, one-shot content</h3>
-  <p>One input, one preset, one output. Start from a ready recipe and swap in your own subject. Fast, forgiving, and perfect for volume.</p>
+ <div class="card p"><span class="tag p">Track B · Presets</span>
+  <h3>Quick, one-step results</h3>
+  <p>One input, one preset, one result. Start from a recipe, swap in your subject.</p>
   <ul class="lanes">
-   <li><b>Portraits &amp; Avatars</b><span>Pet-to-hero avatar, selfie-to-stylized portrait</span></li>
-   <li><b>Photo Editing</b><span>Selfie-to-pro-photoshoot, restore, relight</span></li>
-   <li><b>Products &amp; E-commerce</b><span>Product-to-clean-catalog-shot</span></li>
-   <li><b>Stickers &amp; Illustrations</b><span>Prompt-to-sticker-sheet, icons</span></li>
-   <li><b>Fashion</b><span>Outfit-to-editorial-lookbook</span></li>
-   <li><b>Branding &amp; Logos</b><span>Sketch-to-clean-logo</span></li>
+   <li><b>Portraits &amp; Avatars</b> <span>· avatars, headshots</span></li>
+   <li><b>Photo Editing</b> <span>· fix and elevate a photo</span></li>
+   <li><b>Products &amp; E-commerce</b> <span>· clean product shots</span></li>
+   <li><b>Stickers &amp; Illustrations</b> <span>· sticker sheets, icons</span></li>
+   <li><b>Fashion</b> <span>· lookbook shots</span></li>
+   <li><b>Branding &amp; Logos</b> <span>· a quick logo</span></li>
   </ul>
-  <p class="footnote">Six simple lanes, each with example recipes to copy and adapt.</p>
+  <p class="foot">Six simple lanes, each with recipes to copy.</p>
  </div>
 </div>
-<div class="choice"><b>How to choose:</b> one asset in one step goes to <b style="color:var(--preset)">Preset</b>. A story or campaign with several connected pieces, or the same subject across many outputs, goes to <b style="color:var(--flow)">Flow</b>.</div>
+<div class="choice"><b>Which one?</b> One thing in one step goes to <b style="color:var(--preset)">Presets</b>. A story or campaign with several pieces goes to <b style="color:var(--flow)">Flow</b>.</div>
 </div></section>
 
 <section><div class="wrap">
-<span class="num">04 · What's in the repo</span>
-<h2 style="margin-top:10px">Self-contained, and safe to share read-only</h2>
-<p class="sec-lead">Everything a creator needs and nothing they shouldn't have. The heavy internal engine, competitor analysis, and any keys live in a separate private system this repo never touches.</p>
-<div class="tree">
-content-creators/
-  <span class="c"># start here</span>
-  README.md · ARCHITECTURE.md
-  .claude/skills/<span class="k">creator-setup</span>/        <span class="c"># guided onboarding + verify</span>
-  use-cases/<span class="k">flow</span>/                    <span class="c"># Track A</span>
-    STRATEGY.md · REQUIREMENTS.md · blueprints/
-  use-cases/<span class="k">genai-presets</span>/           <span class="c"># Track B</span>
-    STRATEGY.md · REQUIREMENTS.md · GUIDE.md · examples/
-  tools/                          <span class="c"># shared engine</span>
-    <span class="g">output_tracker.py</span> · <span class="g">budget_guard.py</span> · <span class="g">eval_gate.py</span> · lib/ff.py
-  config/settings.example.json · .env.example
-  scripts/secret_scan.py · docs/creator-education-deck.md
+<span class="num">04 · What's inside</span>
+<h2>Self-contained, and safe to share</h2>
+<p class="sub">Everything a creator needs, nothing they shouldn't have. The heavy internal engine and any keys live in a separate private system.</p>
+<div class="inside">
+ <div class="item"><b>Start here</b><p>What it is and how it fits · <code>README</code> · <code>ARCHITECTURE</code></p></div>
+ <div class="item"><b>Guided setup</b><p>The onboarding skill · <code>creator-setup</code></p></div>
+ <div class="item"><b>Flow track</b><p>Strategy + ready blueprints · <code>use-cases/flow</code></p></div>
+ <div class="item"><b>Presets track</b><p>Strategy + example recipes · <code>use-cases/genai-presets</code></p></div>
+ <div class="item"><b>Helper tools</b><p>Output tracking, budget alerts, quality checks · <code>tools</code></p></div>
+ <div class="item"><b>Config &amp; docs</b><p>Example settings, secret-scan, education deck</p></div>
 </div>
 </div></section>
 
 <section><div class="wrap">
 <span class="num">05 · Setup</span>
-<h2 style="margin-top:10px">From zero to first render in about 5 minutes</h2>
-<p class="sec-lead">The creator-setup skill runs this for the creator, one step at a time, and verifies each before moving on.</p>
+<h2>First render in about 5 minutes</h2>
+<p class="sub">The setup skill runs this for you, one step at a time.</p>
 <div class="steps">
- <div class="step"><b>Install Claude Code</b><p>Desktop app (simplest), the VS Code extension, or the CLI.</p></div>
- <div class="step"><b>Add the Picsart Flow plugin</b><p>Marketplace add, then install. It brings the Flow tools and the build skills.</p></div>
- <div class="step"><b>Sign in with Picsart</b><p>Your own account, this is where your credits come from. Renders always ask first.</p></div>
- <div class="step"><b>Install ffmpeg + clone the repo</b><p>Light local helpers, plus a guided SSH-to-GitLab clone. Access is granted on request.</p></div>
- <div class="step"><b>Configure</b><p>Copy the example settings, set your creator name and a monthly credit alert.</p></div>
- <div class="step"><b>Smoke test</b><p>Build a tiny Text to Image Flow, approve it, render, and confirm the output. You're ready.</p></div>
+ <div class="step"><b>Install Claude</b><p>Desktop, VS Code, or terminal.</p></div>
+ <div class="step"><b>Add the Flow plugin</b><p>Brings the tools and skills.</p></div>
+ <div class="step"><b>Sign in with Picsart</b><p>Your account, your credits.</p></div>
+ <div class="step"><b>Get the kit</b><p>Install ffmpeg + clone the repo.</p></div>
+ <div class="step"><b>Set your name</b><p>And a monthly credit alert.</p></div>
+ <div class="step"><b>Quick test</b><p>Make one image, confirm it works.</p></div>
 </div>
-<p class="footnote" style="margin-top:16px">Stuck later? "verify my setup" re-checks everything. "Needs authentication" just means re-run the Picsart sign-in.</p>
+<p class="foot">Stuck later? Say "verify my setup" and it re-checks everything.</p>
 </div></section>
 
 <section><div class="wrap">
-<span class="num">06 · Access model</span>
-<h2 style="margin-top:10px">Shared read, single writer, private engine kept apart</h2>
+<span class="num">06 · Access</span>
+<h2>Shared to read, one person edits</h2>
 <div class="grid g3">
- <div class="card s"><span class="tag s">Creators</span><h3>Read-only clone</h3><p>Every creator gets Reporter access: clone and use the kit, run everything on their own account. They never edit the shared code.</p></div>
- <div class="card s"><span class="tag s">Owner</span><h3>Single source of truth</h3><p>Only the owner changes the repo. One update propagates to everyone, so strategy, blueprints, and guardrails stay consistent.</p></div>
- <div class="card s"><span class="tag s">Boundary</span><h3>The private engine stays hidden</h3><p>Internal generation IP, competitor analysis, colleague data, and API keys live in a separate private system. This repo reveals none of it.</p></div>
+ <div class="card s"><span class="tag s">Creators</span><h3>Read-only</h3><p>Clone and use the kit on your own account. You never edit the shared code.</p></div>
+ <div class="card s"><span class="tag s">Owner</span><h3>One source of truth</h3><p>Only the owner updates the kit, so everyone stays consistent.</p></div>
+ <div class="card s"><span class="tag s">Boundary</span><h3>Private engine stays hidden</h3><p>Internal IP, competitor data, and keys live elsewhere. This kit shows none of it.</p></div>
 </div>
 </div></section>
 
 <footer><div class="wrap">
-Internal enablement overview for the Picsart Content Creators kit. Creators bring a Picsart account; all generation runs on their own sign-in and credits. Repo access is granted on request.
+Internal overview of the Picsart Content Creators kit. Creators bring a Picsart account; everything runs on their own sign-in and credits. Repo access on request.
 </div></footer>
 </body></html>
